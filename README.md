@@ -42,8 +42,17 @@ sudo npm install pm2@latest -g
 ```
 git clone https://github.com/verma-kunal/AWS-Session.git
 ```
-2. Install npm 
+2. Install npm first in the client directory and then in the server directory
 ```
 npm install
-npm run start
 ```
+3. Start Application
+```
+pm2 start app.js --name <chat_app>
+```
+4. Do pm2 logs 0 it helps identify issues & debug errors.
+```
+pm2 logs 0
+```
+5. If you get any error then do ''' npm i express '''
+6. 
