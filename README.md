@@ -54,5 +54,47 @@ pm2 start app.js --name <chat_app>
 ```
 pm2 logs 0
 ```
-5. If you get any error then do ''' npm i express '''
-6. 
+5. If you get any error then resolve it by typing command
+``` npm i express ```
+6. Edit Nginx Configuration by typing command - `sudo vim /etc/nginx/sites-available/default` 
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+
+#root /var/www/html;
+
+# Add index.php to the list if you are using PHP
+#index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        proxy_pass http://localhost:5001;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection ‘upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+}
+```
+7. Do **sudo nginx -t**, this command is used to test the Nginx configuration for syntax errors before applying changes.
+```
+sudo nginx -t
+```
+8. Restart nginx
+```
+sudo service nginx restart 
+```
+
+> NOTE - We will have to edit the **inbound rules** in the security group of our EC2, in order to allow traffic from our particular port.
+
+### Project is deployed on AWS 🎉
+
+---
+
+
+
+## ✨️ To understand it better & in depth, please visit the blog provided below
+<a href="https://visheshblog.hashnode.dev/day-30-deploying-fullstack-react-application-on-aws-ec2">Blog Link</a>
