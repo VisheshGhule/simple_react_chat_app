@@ -20,7 +20,7 @@ sudo apt update
 ```
 2. Install nginx for high-performance web serving, efficient load balancing, and secure SSL/TLS termination.
 ```
-sudo apt install nginx
+sudo apt install nginx -y
 ```
 3. Install nodejs it is required to run the server-side code of your application.
 ```
