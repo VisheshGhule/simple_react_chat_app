@@ -40,7 +40,7 @@ sudo npm install pm2@latest -g
 
 1. Clone this project in the remote VM
 ```
-git clone https://github.com/verma-kunal/AWS-Session.git
+git clone https://github.com/VisheshGhule/simple_react_chat_app.git
 ```
 2. Install npm first in the client directory and then in the server directory
 ```
