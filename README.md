@@ -55,7 +55,7 @@ pm2 start app.js --name <chat_app>
 pm2 logs 0
 ```
 5. If you get any error then resolve it by typing command
-``` npm i express ``` after that restart pm2 by typing command ``` pm2 restart ``` then again do ``` pm2 logs 0 ```
+``` npm i express ``` after that restart pm2 by typing command ``` pm2 restart all ``` then again do ``` pm2 logs 0 ```
 6. Edit Nginx Configuration by typing command - `sudo vim /etc/nginx/sites-available/default` 
 ```
 server {
